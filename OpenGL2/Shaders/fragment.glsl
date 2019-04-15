@@ -13,25 +13,23 @@ uniform vec3 objectColor;
 void main()
 {
     // ambient
-    float ambientStrength = 0.8;
-    vec3 ambient = ambientStrength * lightColor;    
+    float ambientStrength = 0.3;
+    vec3 ambient = ambientStrength * objectColor;    
     
      // diffuse 
     vec3 norm = normalize(Normal);
     vec3 lightDir = normalize(LightPos - FragPos);
     float diff = max(dot(norm, lightDir), 0.0);
-    vec3 diffuse = diff * lightColor;
+    vec3 diffuse = diff * objectColor;
     
 	vec3 specularReflection;
     if (dot(norm, lightDir) < 0.0) // light source on the wrong side?
     {
-      specularReflection = vec3(0.0, 0.0, 0.0); // no specular reflection
+      specularReflection = vec3(0.0, 0, 0); // no specular reflection
     }
     else // light source on the right side
     {
-      specularReflection = 0.5 * vec3(1,1,1)
-	* pow(max(0.0, dot(reflect(-lightDir, norm), normalize(-FragPos))),
-	      32);
+      specularReflection = 0.5 * vec3(1,1,1) * pow(max(0.0, dot(reflect(-lightDir, norm), normalize(-FragPos))), 8);
     }
 
 	
@@ -42,12 +40,12 @@ void main()
     float blinnTerm = dot(norm, halfAngle);
     blinnTerm = clamp(blinnTerm, 0, 1);
 	blinnTerm = diff != 0.0 ? blinnTerm : 0.0;
-	blinnTerm = pow(blinnTerm, 32);
+	blinnTerm = pow(blinnTerm, 8);
 
     vec3 specular = specularStrength * blinnTerm * lightColor; 
 	  // = vec3(0,1,1);
    
-	vec3  result = (diffuse+ambient+specularReflection) * objectColor;
+	vec3  result = (ambient+specular+diffuse);;
 	
 
    
