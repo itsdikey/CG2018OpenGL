@@ -1,0 +1,19 @@
+﻿  Sphere.cpp
+c:\users\garmu\source\repos\opengl2\opengl2\mementoengine\primitives\sources\sphere.cpp(73): warning C4018: '<=': signed/unsigned mismatch
+c:\users\garmu\source\repos\opengl2\opengl2\mementoengine\primitives\sources\sphere.cpp(84): warning C4018: '<': signed/unsigned mismatch
+c:\users\garmu\source\repos\opengl2\opengl2\mementoengine\primitives\sources\sphere.cpp(12): warning C4101: 'xy': unreferenced local variable
+c:\users\garmu\source\repos\opengl2\opengl2\mementoengine\primitives\sources\sphere.cpp(12): warning C4101: 'z': unreferenced local variable
+c:\users\garmu\source\repos\opengl2\opengl2\mementoengine\primitives\sources\sphere.cpp(13): warning C4101: 'nx': unreferenced local variable
+c:\users\garmu\source\repos\opengl2\opengl2\mementoengine\primitives\sources\sphere.cpp(13): warning C4101: 'ny': unreferenced local variable
+c:\users\garmu\source\repos\opengl2\opengl2\mementoengine\primitives\sources\sphere.cpp(12): warning C4101: 'y': unreferenced local variable
+c:\users\garmu\source\repos\opengl2\opengl2\mementoengine\primitives\sources\sphere.cpp(13): warning C4101: 'nz': unreferenced local variable
+c:\users\garmu\source\repos\opengl2\opengl2\mementoengine\primitives\sources\sphere.cpp(14): warning C4101: 's': unreferenced local variable
+c:\users\garmu\source\repos\opengl2\opengl2\mementoengine\primitives\sources\sphere.cpp(12): warning C4101: 'x': unreferenced local variable
+c:\users\garmu\source\repos\opengl2\opengl2\mementoengine\primitives\sources\sphere.cpp(14): warning C4101: 't': unreferenced local variable
+  OpenGL2.cpp
+c:\users\garmu\source\repos\opengl2\opengl2\opengl2.cpp(36): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\garmu\source\repos\opengl2\opengl2\opengl2.cpp(37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\garmu\source\repos\OpenGL2\Debug\vc120.pdb'; linking object as if no debug info
+  OpenGL2.vcxproj -> C:\Users\garmu\source\repos\OpenGL2\Debug\OpenGL2.exe
