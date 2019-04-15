@@ -26,6 +26,8 @@ float _angleY, _angleX;
 double _mouseLastPosX = 320, _mouseLastPosY = 240, _mouseStepSize = 240;
 glm::vec3 mousePos;
 glm::vec4 distanceFromCenter = glm::vec4(0, 0, 4,1);
+glm::vec3 up = glm::vec3(0, 1, 0);
+glm::vec3 currentUp=up;
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 {
@@ -37,6 +39,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 	_angleY += PI * deltaX / _mouseStepSize;
 	glm::mat4 rotation = glm::rotate(glm::mat4(1.0f), _angleX, glm::vec3(1, 0, 0));
 	rotation = glm::rotate(rotation, _angleY, glm::vec3(0, 1, 0));
+	currentUp = rotation * glm::vec4(up,0.f);
 	mousePos = rotation * distanceFromCenter;
 	//Spherical coordinates have issues on Pi/2 and -Pi/2 where cos(theta) = 0
     /*_camTheta += PI * deltaY / _mouseStepSize;
@@ -107,7 +110,7 @@ int main(void)
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glm::mat4 Model = glm::mat4(1.0f);
 		glm::mat4 View = glm::lookAt(mousePos,
-			glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));//center, lookat, up
+			glm::vec3(0, 0, 0), currentUp);//center, lookat, up
 
 		glm::mat4 Projection = glm::perspective(glm::radians(45.0f),
 			(float)4.0 / (float)3.0, 0.1f, 100.0f);
@@ -118,7 +121,7 @@ int main(void)
 		program->SetMat4("projection", Projection);
 		program->SetVec3("objectColor", 0.8f, 0.0f, 0.0f);
 		program->SetVec3("lightColor", 1.0f, 1.0f, 1.0f);
-		program->SetVec3("lightPos", 0, 3, 5);
+		program->SetVec3("lightPos", 0, 0, -5);
 
 
 	/*	vao->bindBuffer();
