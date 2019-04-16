@@ -9,7 +9,7 @@ in vec3 LightPos;   // extra in variable, since we need the light position in vi
 
 uniform vec3 lightColor;
 uniform vec3 objectColor;
-
+const bool blinn = true;
 void main()
 {
     // ambient
@@ -23,29 +23,36 @@ void main()
     vec3 diffuse = diff * objectColor;
     
 	vec3 specularReflection;
-    if (dot(norm, lightDir) < 0.0) // light source on the wrong side?
-    {
-      specularReflection = vec3(0.0, 0, 0); // no specular reflection
-    }
-    else // light source on the right side
-    {
-      specularReflection = 0.5 * vec3(1,1,1) * pow(max(0.0, dot(reflect(-lightDir, norm), normalize(-FragPos))), 8);
-    }
+	if(!blinn)
+	{
+		if (dot(norm, lightDir) < 0.0) // light source on the wrong side?
+		{
+			specularReflection = vec3(0.0, 0, 0); // no specular reflection
+		}
+		else // light source on the right side
+		{
+			specularReflection = 0.5 * vec3(1,1,1) * pow(max(0.0, dot(reflect(lightDir, norm), normalize(-FragPos))), 8);
+		}
+	}
+   
 
-	
-    float specularStrength = 0.3;
-    vec3 viewDir = normalize(-FragPos);
+	if(blinn)
+	{
+		float specularStrength = 0.3;
+		vec3 viewDir = normalize(-FragPos);
 
-	vec3 halfAngle = normalize(lightDir + viewDir);
-    float blinnTerm = dot(norm, halfAngle);
-    blinnTerm = clamp(blinnTerm, 0, 1);
-	blinnTerm = diff != 0.0 ? blinnTerm : 0.0;
-	blinnTerm = pow(blinnTerm, 8);
+		vec3 halfAngle = normalize(lightDir - viewDir);
+		float blinnTerm = dot(norm, halfAngle);
+		blinnTerm = clamp(blinnTerm, 0, 1);
+		blinnTerm = diff != 0.0 ? blinnTerm : 0.0;
+		blinnTerm = pow(blinnTerm, 32);
 
-    vec3 specular = specularStrength * blinnTerm * lightColor; 
+		specularReflection = specularStrength * blinnTerm * lightColor; 
+	}
+  
 	  // = vec3(0,1,1);
    
-	vec3  result = (ambient+specular+diffuse);;
+	vec3  result = (ambient+specularReflection+diffuse);;
 	
 
    
