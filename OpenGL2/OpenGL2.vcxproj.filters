@@ -51,6 +51,15 @@
     <ClInclude Include="MementoEngine\Primitives\Headers\Sphere.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MementoEngine\Headers\MementoScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MementoEngine\Headers\MementoInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MementoEngine\Headers\MementoObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -81,6 +90,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MementoEngine\Primitives\Sources\Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MementoEngine\Source\MementoScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

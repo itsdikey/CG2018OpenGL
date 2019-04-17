@@ -163,6 +163,9 @@
     <ClInclude Include="Core\Headers\ShaderProgram.h" />
     <ClInclude Include="Core\Headers\VAOWrapper.h" />
     <ClInclude Include="Core\Headers\VBOWrapper.h" />
+    <ClInclude Include="MementoEngine\Headers\MementoInstance.h" />
+    <ClInclude Include="MementoEngine\Headers\MementoObject.h" />
+    <ClInclude Include="MementoEngine\Headers\MementoScene.h" />
     <ClInclude Include="MementoEngine\Headers\Mesh.h" />
     <ClInclude Include="MementoEngine\Headers\Utils.h" />
     <ClInclude Include="MementoEngine\Primitives\Headers\Sphere.h" />
@@ -176,6 +179,7 @@
     <ClCompile Include="Core\Sources\VAOWrapper.cpp" />
     <ClCompile Include="Core\Sources\VBOWrapper.cpp" />
     <ClCompile Include="MementoEngine\Primitives\Sources\Sphere.cpp" />
+    <ClCompile Include="MementoEngine\Source\MementoScene.cpp" />
     <ClCompile Include="MementoEngine\Source\Mesh.cpp" />
     <ClCompile Include="OpenGL2.cpp" />
     <ClCompile Include="pch.cpp">
