@@ -3,6 +3,7 @@
 class MementoObject : public MementoInstance
 {
 public: 
-	void Draw();
-	void Update();
+	void OnLoad();
+	void Pulse();
+	void OnDestroy();
 };
