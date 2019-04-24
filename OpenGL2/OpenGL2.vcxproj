@@ -164,14 +164,23 @@
     <ClInclude Include="Core\Headers\VAOWrapper.h" />
     <ClInclude Include="Core\Headers\VBOWrapper.h" />
     <ClInclude Include="MementoEngine\Core\Headers\MementoApp.h" />
+    <ClInclude Include="MementoEngine\Core\Headers\Mouse.h" />
     <ClInclude Include="MementoEngine\Core\Headers\Time.h" />
+    <ClInclude Include="MementoEngine\Core\Headers\Transform.h" />
+    <ClInclude Include="MementoEngine\Headers\Camera.h" />
     <ClInclude Include="MementoEngine\Headers\MementoInstance.h" />
     <ClInclude Include="MementoEngine\Headers\MementoObject.h" />
     <ClInclude Include="MementoEngine\Headers\MementoScene.h" />
     <ClInclude Include="MementoEngine\Headers\Mesh.h" />
     <ClInclude Include="MementoEngine\Headers\Utils.h" />
+    <ClInclude Include="MementoEngine\MementoEngine.h" />
+    <ClInclude Include="MementoEngine\MementoEngineCore.h" />
+    <ClInclude Include="MementoEngine\MementoPrimitives.h" />
     <ClInclude Include="MementoEngine\Primitives\Headers\Sphere.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Sample01\Headers\ArcCamera.h" />
+    <ClInclude Include="Sample01\Headers\Sample1Scene.h" />
+    <ClInclude Include="Sample01\Headers\SphereObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Sources\RenderComb.cpp" />
@@ -181,7 +190,10 @@
     <ClCompile Include="Core\Sources\VAOWrapper.cpp" />
     <ClCompile Include="Core\Sources\VBOWrapper.cpp" />
     <ClCompile Include="MementoEngine\Core\Sources\MementoApp.cpp" />
+    <ClCompile Include="MementoEngine\Core\Sources\Mouse.cpp" />
+    <ClCompile Include="MementoEngine\Core\Sources\Time.cpp" />
     <ClCompile Include="MementoEngine\Primitives\Sources\Sphere.cpp" />
+    <ClCompile Include="MementoEngine\Source\Camera.cpp" />
     <ClCompile Include="MementoEngine\Source\MementoObject.cpp" />
     <ClCompile Include="MementoEngine\Source\MementoScene.cpp" />
     <ClCompile Include="MementoEngine\Source\Mesh.cpp" />
@@ -192,6 +204,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Sample01\Sources\ArcCamera.cpp" />
+    <ClCompile Include="Sample01\Sources\Sample1Scene.cpp" />
+    <ClCompile Include="Sample01\Sources\SphereObject.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
